@@ -1,5 +1,4 @@
-import { createStore } from "redux";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
   counter: 0,
@@ -7,7 +6,7 @@ const initialState = {
 };
 
 const counterSlice = createSlice({
-  name: "counter", //name of
+  name: "counter", //name of state
   initialState,
   reducers: {
     increment(state) {
@@ -25,6 +24,8 @@ const counterSlice = createSlice({
   },
 });
 
-const store = createStore(counterSlice.reducer);
+const store = configureStore({
+  reducer: counterSlice.reducer
+});
 
 export default store;
