@@ -7,8 +7,8 @@ const Counter = () => {
   const dispatch = useDispatch();
   // We assign state to redux to manage
   // Now we get it from redux and only get a part of state, that is a counter
-  const counter = useSelector((state) => state.counter);
-  const show = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const show = useSelector((state) => state.counter.showCounter);
 
   const increamentHandler = () => {
     // dispatch will send an action to the redux
